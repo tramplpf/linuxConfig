@@ -1,6 +1,11 @@
 #!/bin/bash
 
 
+## mv /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo.bak  
+## wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/epel-7.repo  
+## yum clean all  
+## yum  makecache  
+
 # 安装 epel 扩展仓库 
 yum install epel-release -y 
 
