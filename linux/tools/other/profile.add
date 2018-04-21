@@ -1,0 +1,12 @@
+
+# for info
+alias rm='rm -i'
+puser=`whoami`
+vtty='tty'
+alias clear='clear;echo --------------------------------------------Intelligent ---$puser--$vtty------------'
+
+
+
+# for history command with user and time 
+export HISTTIMEFORMAT="%y-%m-%d %H:%M:%S" 'whoami' 
+
