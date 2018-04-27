@@ -47,3 +47,6 @@ ln -s /usr/local/rar/rar/unrar /usr/local/bin/unrar
 
 
 # display the time and user of history 
+
+
+yum install nc -y 
