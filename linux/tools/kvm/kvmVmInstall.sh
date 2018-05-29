@@ -1,0 +1,12 @@
+virt-install --connect qemu:///system \ #如果使用kvm安装，并且使用的root，默认为此，基于xen或者其它，可参考man virt-install
+        --n centos701 \    #指定虚拟机的显示名称
+        --c /opt/package/images/CentOS-7-x86_64-NetInstall-1708.iso    #指定安装镜像，也可以指定cdrom直接安装，如:-c /dev/sr0
+        --r 2048 \    #指定内存，默认为MB
+        --arch=x86_64 \    #指定arch模型
+        --vcpus=2 --check-cpu --cpuset=0-1 \ #指定cpu0,1作为虚拟机的CPU，此处绑定了CPU
+        --os-type=linux --os-variant=rhel6 \    #指定系统类型和版本
+        --disk path=/home/lpf/kvm/centos701/centos701.img,device=disk,bus=virtio,spare=true -s 10 \ #指定磁盘信息，使用virtio驱动加载
+        --network bridge=br0 \    #指定桥接模式，并指定通过br0网卡进行桥接
+        --noautoconsol --autostart \ #不自动开启控制台，并且随主机自启动
+        --vnc    #提供vnc端口访问，在这里可以设置密码，也可以不设置
+        --force
